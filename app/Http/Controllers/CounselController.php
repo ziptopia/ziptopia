@@ -21,4 +21,14 @@ class CounselController extends Controller
     public function service () {
         return view('counsel.service');
     }
+
+    public function counsel_req (Request $request)
+    {
+        # code...
+    }
+
+    public function counsel_free_req (Request $request)
+    {
+        # code...
+    }
 }

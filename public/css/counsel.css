@@ -397,7 +397,7 @@ body {
   margin: 100px 0;
   position: relative;
 }
-.button a {
+.button [type="button"] {
   display: block;
   width: 250px;
   height: 80px;

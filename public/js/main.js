@@ -1,4 +1,4 @@
-$(function(){
+$(document).ready(function(){
   $(".logo").on('click',function(){
     location.reload();
   });
@@ -17,9 +17,12 @@ $(function(){
           processData: false,
           success: function (res) {
               console.log(res);
-              alert('login success');
+              
+              alert(res.message);
 
-              location.reload();
+              if (res.result != 'success') return false;
+
+              location.href='/';
           },
           error: function (jqxhr, status, error) {
               console.log(jqxhr);
@@ -87,5 +90,50 @@ $(function(){
         });    
 
     });
+
+    // 패스워드 리셋  이메일 발송
+    $('#ResetSendEmailAct').on('click', function () {  
+
+        var formData = new FormData($('#pop_resetpw_form')[0]);
+
+        $.ajax({
+            type: "POST",
+            url: "password/email",
+            data: formData,
+            dataType: false,
+            contentType: false,
+            processData: false,
+            success: function (res) {
+                // console.log(res);
+                alert('이메일이 발송되었습니다.');
+                location.reload();
+
+            },
+            error: function (jqxhr, status, error) {
+                console.log(jqxhr);
+                return false;
+            }
+        });
+    });
+
+    // // 패스워드 변경
+    // $('#pwmodiAct').on('click', function () {
+    //     var formData = new FormData($('#pop_pwmodi_form')[0]);
+
+    //     $.ajax({
+    //         type: "POST",
+    //         url: "/password/update",
+    //         data: formData,
+    //         dataType: false,
+    //         contentType: false,
+    //         processData: false,
+    //         success: function (res) {  
+    //             console.log(res);
+    //         },
+    //         error: function (jqxhr, status, error) {  
+    //             console.log(jqxhr);
+    //         }
+    //     });
+    // });
 
 });

@@ -38,11 +38,21 @@ $(function () {
     var email = $(".join_email");
     var login = $(".pop_login_form");
     var join = $(".pop_join_form");
+    var pw = $(".reset_pw");
+    var resetpw = $(".pop_resetpw_form");
 
     email.click(function () {
       login.hide();
+      resetpw.hide();
       join.show();
       $(".popup").addClass("popup_join");
+    });
+
+    pw.click(function () {
+      login.hide();
+      join.hide();
+      resetpw.show();
+      $(".popup").addClass("popup_resetpw");
     });
   });
 

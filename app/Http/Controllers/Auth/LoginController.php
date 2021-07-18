@@ -3,15 +3,12 @@
 namespace App\Http\Controllers\Auth;
 
 use Illuminate\Http\Request;
-use Hash;
-use Session;
 use App\Models\User;
 use App\Http\Controllers\Controller;
 use Exception;
-use Illuminate\Support\Arr;
 use Laravel\Socialite\Facades\Socialite;
 use Illuminate\Support\Facades\Auth;
-use PhpParser\Node\Stmt\TryCatch;
+use Illuminate\Support\Facades\Hash;
 
 class LoginController extends Controller
 {
@@ -24,8 +21,12 @@ class LoginController extends Controller
     {
         return view('auth.login');
     }
+
     public function process_login(Request $request)
     {
+
+        $result = array();
+
         $request->validate([
             'email' => 'required',
             'password' => 'required'
@@ -35,23 +36,59 @@ class LoginController extends Controller
 
         $user = User::where('email',$request->email)->first();
 
+        if (!isset($user->email) || $user->email == '') {
+
+            $result = array(
+                'result' => 'error',
+                'message' => '존재하지 않는 이메일 입니다.',
+                'redirect' => '/'
+            );            
+        
+            return $result;
+        }
+
         if (Auth::attempt($credentials)) {
 
-            $request->session()->put('user', $request->email);
+            if (Hash::check($request->password, $user->password)) {
 
-            session([
-                'user' => $request->email
-            ]);
+                $request->session()->put('user', $request->email);
 
-            $request->session()->flash('status', 'Task was successful!');
+                session([
+                    'user' => $request->email
+                ]);
+    
+                $request->session()->flash('status', 'Task was successful!');
+
+                $result = array(
+                    'result' => 'success',
+                    'message' => '로그인 성공',
+                    'redirect' => '/'
+                );
+
+            } else {
+
+                $result = array(
+                    'result' => 'error',
+                    'message' => '비밀번호가 일치하지 않습니다.',
+                    'redirect' => '/'
+                );
+
+            }
 
             // return redirect()->route('/');
-            return true;
 
         }else{
             session()->flash('message', 'Invalid credentials');
-            return redirect()->back();
+
+            $result = array(
+                'result' => 'error',
+                'message' => 'Invalid credentials',
+                'redirect' => '/'
+            );            
+            // return redirect()->back();
         }
+
+        return $result;
     }
     public function show_signup_form()
     {
@@ -68,7 +105,7 @@ class LoginController extends Controller
         $user = User::create([
             'name' => trim($request->input('name')),
             'email' => strtolower($request->input('email')),
-            'password' => bcrypt($request->input('password')),
+            'password' => Hash::make($request->input('password'))
         ]);
 
         session()->flash('message', 'Your account is created');
@@ -110,64 +147,32 @@ class LoginController extends Controller
         // try {
             
             $user = Socialite::driver($provider)->user();
+            $column_name = $provider . "_id";
 
             //  이미 있는 이메일일 경우 기존 이메일정보에 포함
             $chk_email = User::where('email', $user->email)->first();
             if ($chk_email) {
-                
-                if ($provider == 'naver') {
-                    User::where('email', $user->email)->update(array('naver_id' => $user->id));
-                } else if ($provider == 'kakao') {
-                    User::where('email', $user->email)->update(array('kakao_id' => $user->id));
-                } else if ($provider == 'google') {
-                    User::where('email', $user->email)->update(array('google_id' => $user->id));
-                }
+
+                User::where('email', $user->email)->update(array($column_name => $user->id));
                 
                 Auth::login($chk_email);
                 return redirect('/');
             }
     
-            if ($provider == 'naver') {
-                $finduser = User::where('naver_id', $user->id)->first();
-            } else if ($provider == 'kakao') {
-                $finduser = User::where('kakao_id', $user->id)->first();
-            } else if ($provider == 'google') {
-                $finduser = User::where('google_id', $user->id)->first();
-            }
+            $finduser = User::where($column_name, $user->id)->first();
+
     
             if ($finduser) {
                 Auth::login($finduser);
                 return redirect('/');
             } else {
 
-                if ($provider == 'naver') { 
-
-                    $newUser = User::create([
-                        'name' => $user->name,
-                        'email' => $user->email,
-                        'naver_id' => $user->id,
-                        'password' => bcrypt(uniqid())
-                    ]);
-
-                } else if ($provider == 'kakao') {
-
-                    $newUser = User::create([
-                        'name' => $user->name,
-                        'email' => $user->email,
-                        'kakao_id' => $user->id,
-                        'password' => bcrypt(uniqid())
-                    ]);
-
-                } else if ($provider == 'google') {
-
-                    $newUser = User::create([
-                        'name' => $user->name,
-                        'email' => $user->email,
-                        'google_id' => $user->id,
-                        'password' => bcrypt(uniqid())
-                    ]);
-
-                }
+                $newUser = User::create([
+                    'name' => $user->name,
+                    'email' => $user->email,
+                    $column_name => $user->id,
+                    'password' => bcrypt(uniqid())
+                ]);
     
                 Auth::login($newUser);
                 return redirect('/');
@@ -178,4 +183,6 @@ class LoginController extends Controller
         //     return false;
         // }
     }
+
+
 }

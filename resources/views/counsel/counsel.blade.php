@@ -49,7 +49,7 @@
             <h3><span>STEP 1</span></h3>
             <p>고객님의 기본정보를 입력해주세요.</p>
           </div>
-          <form action="" name="" class="discount_counsel">
+          <form id="discount_counsel_form" name="discount_counsel_form" class="discount_counsel" enctype="multipart/form-data">
             <div class="step1">
               <p><small>＊</small> 필수 입력 및 필수 선택사항</p>
               <ul>
@@ -248,7 +248,7 @@
               </ul>
             </div>
             <div class="button">
-              <a href="{{ url('/counsel/service') }}">상담 신청하기</a>
+              <button type="button" id="DiscountCounselAct">상담 신청하기</button>
             </div>
           </form>
         </div><!-- step1,2 -->

@@ -1,0 +1,255 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+  }
+  
+  li {
+    list-style: none;
+  }
+  
+  a {
+    text-decoration: none;
+    color: black;
+  }
+  
+  body {
+    font-family: 'Noto Sans KR', sans-serif;
+    letter-spacing: 0.06em;
+  }
+  #wrap {
+    position: relative;
+  }
+  /* header */
+  .gnb_ex {
+    overflow: hidden;
+    margin: 0 auto;
+    width: 1100px;
+    height: 65px;
+    padding-top: 15px;
+  }
+  .logo {
+    float: left;
+  }
+  .gnb {
+    float: right;
+  }
+  .gnb ul {
+    font-size: 0;
+  }
+  .gnb ul li {
+    display: inline-block;
+    margin-right: 12px;
+    font-size: 14px;
+    line-height: 40px;
+    color: #333;
+  }
+  .gnb ul li:nth-child(1)::after,
+  .gnb ul li:nth-child(2)::after {
+    content: "";
+    height: 10px;
+    margin-left: 12px;
+    border-right: 1px solid #d3d3d3;
+  }
+  .gnb ul li a {
+    overflow: hidden;
+  }
+  .gnb ul li a img {
+    display: block;
+    float: left;
+    margin-top: 10px;
+    margin-right: 4px;
+  }
+  .gnb ul li a p {
+    float: left;
+  }
+  .lnb_ex {
+    width: 1100px;
+    height: 65px;
+    margin: 0 auto;
+  }
+  .lnb>ul {
+    display: flex;
+    padding-top: 15px;
+  }
+  .lnb>ul>li {
+    width: 183px;
+    height: 70px;
+    font-size: 18px;
+    font-weight: bold;
+    position: relative;
+    color: #333;
+    text-align: center;
+  }
+  .lnb>ul>li:hover>a {
+    color: #418ade;
+  }
+
+  .popup {
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 420px;
+    height: 460px;
+    background-color: white;
+    border-radius: 5px;
+    box-shadow: 5px 5px 25px #ccc;
+    text-align: center;
+    z-index: 100;
+    padding: 50px;
+  }
+  .popup_join {
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 420px;
+    height: 740px;
+    background-color: white;
+    border-radius: 5px;
+    box-shadow: 5px 5px 25px #ccc;
+    text-align: center;
+    z-index: 100;
+    padding: 50px;
+  }
+
+.pop_login_form div:nth-child(3) a,
+.pop_login_form span {
+  font-size: 12px;
+  color: #aaa;
+}
+.pop_login_form span {
+  padding: 0 15px;
+}
+.pop_login_form div:last-child {
+  margin-top: 40px;
+}
+.pop_login_form div:last-child a {
+  color: #336fb4;
+}
+
+.login_form {
+margin-top: 40px;
+}
+.login_form li {
+margin-top: 10px;
+}
+.login_form li:last-child {
+margin-top: 20px;
+}
+.login_form li {
+position: relative;
+}
+.login_form [type="text"],
+.login_form [type="email"],
+.login_form [type="password"] {
+border: none;
+border-bottom: 1px solid #aaa;
+outline: none;
+width: 320px;
+height: 40px;
+font-size: 15px;
+text-indent: 5px;
+}
+.login_form label {
+font-size: 15px;
+color: #aaa;
+position: absolute;
+left: 5px;
+top: 10px;
+}
+.login_form input:focus,
+.login_form input:valid {
+border-bottom: 1px solid #418ade;
+}
+.login_form input:focus + label,
+.login_form input:valid + label{
+display: none;
+}
+.login_form li:nth-child(2) {
+margin-top: 20px;
+margin-bottom: 45px;
+}
+.login_form [type="submit"],
+.login_form [type="button"] {
+width: 320px;
+height: 52px;
+border-radius: 5px;
+background-color: #418ade;
+border: none;
+cursor: pointer;
+color: white;
+margin-bottom: 15px;
+}
+.pop_join_form button {
+width: 320px;
+height: 52px;
+background-color: #418ade;
+border: none;
+color: white;
+border-radius: 5px;
+margin-top: 20px;
+cursor: pointer;
+}
+
+.join_top {
+    margin-top: 40px;
+  }
+  .join_top label {
+    display: block;
+    text-align: left;
+  }
+  .join_top li {
+    width: 320px;
+    height: 80px;
+    margin-top: 10px;
+  }
+  .join_top input {
+    width: 320px;
+    height: 40px;
+    border: none;
+    border-bottom: 1px solid #ccc;
+    text-indent: 10px;
+    font-size: 15px;
+    color: #ccc;
+    outline: none;
+  }
+  .join_top input:valid  {
+    color: black;
+  }
+  .join_bottom {
+    margin-top: 30px;
+  }
+  .join_bottom li {
+    position: relative;
+    width: 320px;
+    text-align: left;
+  }
+  .join_bottom li input {
+    display: inline-block;
+    width: 16px;
+    height: 16px;
+    margin-top: 3px;
+    margin-right: 5px;
+    cursor: pointer;
+  }
+  .join_bottom li label {
+    display: inline-block;
+    font-size: 12px;
+    cursor: pointer;
+  }
+  .join_bottom li label span {
+    color: #418ade;
+  }
+  .join_bottom>li:first-child label {
+    font-size: 15px;
+  }
+  .join_bottom li a {
+    position: absolute;
+    right: 10px;
+    font-size: 12px;
+  }
+  .join_bottom>div {
+    padding: 10px;
+  }

@@ -38,12 +38,12 @@
                   <form id="LogoutForm">
                     @csrf
                   </form>
-                  <p><a href="#" id="LogoutAct">로그아웃</a></p>
+                  <p>{{ session()->get('user') }} <a href="#" id="LogoutAct">로그아웃</a></p>
                 </li>
                 @else
                 <li>
                 <a href="#" class="login">
-                    <p>로그인 {{ session()->get('user') }}</p>
+                    <p>로그인</p>
                 </a>
                 </li>
                 <li>
@@ -178,12 +178,34 @@
           </ul>
         </form>
         <div>
-          <a href="#">아이디 찾기</a><span>|</span><a href="#">비밀번호 찾기</a>
+          <a href="#">아이디 찾기</a><span>|</span><a href="#" class="reset_pw">비밀번호 재설정</a>
         </div>
         <div>
           <a href="#" class="join_email">집토피아 이메일로 회원가입</a>
         </div>
       </div>
+      {{-- 비밀번호 재설정 이메일 발송\start --}}
+      <div class="pop_resetpw_form">
+        <h2>비밀번호 재설정</h2>
+        <form method="POST" id="pop_resetpw_form" name="pop_resetpw_form" action="{{ route('password.email') }}" class="resetpw_form">
+            @csrf
+          <ul>
+            <li>
+              <input type="email" id="email" name="email" class="@error('email') is-invalid @enderror" autocomplete="off" required>
+              <label for="email">이메일</label>
+                @error('email')
+                    <span class="invalid-feedback" role="alert">
+                        <strong>{{ $message }}</strong>
+                    </span>
+                @enderror
+            </li>
+            <li>
+              <button id="ResetSendEmailAct" type="submit">재설정 이메일 발송</button>
+            </li>
+          </ul>
+        </form>
+      </div>
+      {{-- 비밀번호 재설정 이메일 발송\end --}}
       <div class="pop_join_form">
         <h2>회원가입</h2>
         <form id="join_form" class="join_form">

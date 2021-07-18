@@ -5,7 +5,12 @@ namespace App\Models;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
 
-class customer_mod_log extends Model
+class AdminMemberLog extends Model
 {
     use HasFactory;
+
+    protected $fillable = [
+        'no',
+        'log'
+    ];
 }
