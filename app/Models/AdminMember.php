@@ -12,7 +12,7 @@ class AdminMember extends Authenticatable
 {
     use HasFactory, Notifiable;
 
-    protected $guarded = [];
+    protected $guard = 'admin';
 
     protected $fillable = [
         'email',
@@ -24,14 +24,4 @@ class AdminMember extends Authenticatable
     protected $hididen = [
         'password'
     ];
-
-    public function setPasswordAttribute($value)
-    {
-        $this->attributes['password'] = Hash::make($value);
-    }
-
-    public function scopeIsActive($query)
-    {
-        return $query->where('isUse', 'Y');
-    }
 }

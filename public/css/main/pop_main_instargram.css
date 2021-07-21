@@ -1,0 +1,55 @@
+
+/* pop_insta */
+.pop_insta {
+  display: none;
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: 600px;
+  height: 700px;
+  background-color: white;
+  border-radius: 5px;
+  box-shadow: 5px 5px 25px #ccc;
+  z-index: 100;
+  padding: 30px;
+  color: #333;
+}
+.pop_insta h3 {
+  font-size: 18px;
+  line-height: 30px;
+  margin-top: 10px;
+}
+.pop_insta>p {
+  font-size: 14px;
+  line-height: 30px;
+}
+.pop_insta>div>span {
+  display: inline-block;
+  width: 50px;
+  height: 20px;
+  background-color: #f5f5f5;
+  border-radius: 5px;
+  text-align: center;
+  line-height: 20px;
+  font-size: 12px;
+}
+.scrab {
+  position: absolute;
+  bottom: 80px;
+  right: 30px;
+}
+.scrab>a {
+  display: inline-block;
+  width: 70px;
+  height: 27px;
+  background-color: #e3eaff;
+  border-radius: 5px;
+  font-size: 12px;
+  padding: 5px;
+  text-align: center;
+}
+.scrab>a span {
+  color: #7393ff;
+  padding-left: 5px;
+}

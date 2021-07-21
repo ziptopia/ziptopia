@@ -1,0 +1,501 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+li {
+  list-style: none;
+}
+
+a {
+  text-decoration: none;
+  color: black;
+}
+
+body {
+  font-family: 'Noto Sans KR', sans-serif;
+  letter-spacing: 0.06em;
+}
+#wrap {
+  position: relative;
+}
+/* header */
+.gnb_ex {
+  overflow: hidden;
+  margin: 0 auto;
+  width: 1100px;
+  height: 65px;
+  padding-top: 15px;
+}
+.logo {
+  float: left;
+}
+.gnb {
+  float: right;
+}
+.gnb ul {
+  font-size: 0;
+}
+.gnb ul li {
+  display: inline-block;
+  margin-right: 12px;
+  font-size: 14px;
+  line-height: 40px;
+  color: #333;
+}
+.gnb ul li:nth-child(1)::after,
+.gnb ul li:nth-child(2)::after {
+  content: "";
+  height: 10px;
+  margin-left: 12px;
+  border-right: 1px solid #d3d3d3;
+}
+.gnb ul li a {
+  overflow: hidden;
+}
+.gnb ul li a img {
+  display: block;
+  float: left;
+  margin-top: 10px;
+  margin-right: 4px;
+}
+.gnb ul li a p {
+  float: left;
+}
+.lnb_ex {
+  width: 1100px;
+  height: 65px; 
+  margin: 0 auto;
+}
+.lnb>ul {
+  display: flex;
+  padding-top: 15px;
+}
+.lnb>ul>li {
+  width: 183px;
+  height: 70px;
+  font-size: 18px;
+  font-weight: bold;
+  position: relative;
+  color: #333;
+  text-align: center;
+}
+.lnb>ul>li:hover>a {
+  color: #418ade;
+}
+.submenu {
+  position: absolute;
+  display: flex;
+  top: 50px;
+  left: -400px;
+  width: 1100px;
+  z-index: 10;
+  line-height: 50px;
+  padding-left: 70px;
+  height: 0;
+  overflow: hidden;
+}
+.gur {
+  left: -765px;
+}
+.coun02 {
+  height: 50px;
+}
+.coun01>a {
+  color: #418ade;
+}
+.coun02>li:first-child a {
+  border-bottom: 4px solid white;
+}
+.submenu li{
+  margin-right: 75px;
+}
+.submenu li a {
+  display: block;
+  width: 110px;
+  height: 45px;
+  color: white;
+  font-size: 16px;
+}
+.subm:hover .submenu {
+  height: 60px;
+}
+.submenu li a:hover {
+  border-bottom: 4px solid white;
+}
+.sub_bg {
+  display: block;
+  position: absolute;
+  top: 130px;
+  left: 0;
+  z-index: 1;
+  width: 100%;
+  height: 50px;
+  background-color: #418ade;
+}
+/* container */
+#container {
+  padding-top: 50px;
+}
+.title01 {
+  width: 100%;
+  height: 300px;
+  background-color: #f6f6f6;
+}
+.title01>div {
+  width: 1100px;
+  margin: 0 auto;
+  text-align: center;
+  color: #333;
+}
+.title01>div h1 {
+  font-size: 60px;
+  padding-top: 50px;
+  font-weight: 900;
+}
+.title01>div p {
+  font-size: 16px;
+  line-height: 40px;
+  margin-top: 20px;
+}
+.title02 {
+  width: 1100px;
+  margin: 0 auto;
+  text-align: center;
+  color: #333;
+}
+.title02>h2 {
+  font-size: 28px;
+  margin: 80px 0;
+  font-weight: 900;
+}
+.title02>div {
+  display: flex;
+  justify-content: left;
+  width: 720px;
+  margin: 20px auto;
+}
+.title02>div h4 {
+  line-height: 40px;
+  margin-left: 10px;
+  font-size: 20px;
+}
+.title02>p>strong {
+  line-height: 50px;
+}
+.title02>p:last-child {
+  line-height: 36px;
+  margin-top: 30px;
+  margin-bottom: 80px;
+}
+.title03 {
+  width: 100%;
+  height: 450px;
+  background-color: #fafafa;
+  padding-top: 60px;
+  margin-bottom: 180px;
+}
+.title03>div {
+  width: 1100px;
+  margin: 0 auto;
+  text-align: center;
+}
+.title03 h3 {
+  font-size: 24px;
+  line-height: 50px;
+  margin-bottom: 50px;
+}
+.title03 h3>img {
+  padding: 0 30px;
+}
+.title03 h3:first-child span{
+  font-family: 'Roboto', sans-serif;
+}
+.title03_color span {
+  color: #2d5f98;
+}
+
+.counsel_wrap {
+  width: 1100px;
+  margin: 0 auto;
+}
+.step h2 {
+  font-size: 32px;
+  font-weight: 900;
+}
+.step_txt {
+  display: flex;
+  margin-top: 70px;
+  margin-bottom: 35px;
+}
+.step h3 {
+  font-size: 32px;
+  color: #136bfc;
+  font-weight: 900;
+  font-family: 'Roboto', sans-serif;
+  line-height: 32px;
+  margin-right: 20px;
+}
+.step_txt p {
+  line-height: 32px;
+  font-size: 16px;
+}
+.step1 {
+  width: 1100px;
+  height: 580px;
+  background-color: #fafafa;
+  border-radius: 10px;
+  padding: 55px 50px;
+}
+.step1>p {
+  font-size: 12px;
+}
+.step1>ul {
+  height: 460px;
+  display: flex;
+  flex-direction: column;
+  flex-wrap: wrap;
+}
+.step1>ul>li {
+  margin-top: 40px;
+}
+.step1>ul>li:first-child {
+  margin-top: 20px;
+}
+.step h4 {
+  font-size: 18px;
+  margin-bottom: 12px;
+}
+.step small {
+  font-size: 8px;
+}
+.step select {
+  width: 248px;
+  height: 40px;
+  border: 1px solid #999;
+  padding: 0 10px;
+  margin-right: 8px;
+  border-radius: 3px;
+}
+.step ul li:nth-child(3) select{
+  width: 118px;
+}
+.step ul li:nth-child(3) select:first-child {
+  margin-right: 8px;
+}
+.step ul li:nth-child(3) input {
+  width: 248px;
+  height: 40px;
+  padding-left: 10px;
+}
+.step ul li:nth-child(4) {
+  overflow: hidden;
+}
+.step ul li:nth-child(4)>div {
+  float: left;
+  margin-right: 6px;
+}
+.step ul li:nth-child(4) input {
+  display: none;
+}
+.step ul li:nth-child(4) label {
+  display: inline-block;
+  width: 118px;
+  height: 40px;
+  border-radius: 3px;
+  border: 1px solid #999;
+  text-align: center;
+  line-height: 40px;
+  font-size: 14px;
+  margin-right: 8px;
+  background-color: white;
+}
+#part:checked ~ div label:first-child,
+#all:checked ~ div label:last-child {
+  background-color: #3960c0;
+  color: white;
+  border: none;
+}
+.step ul li:nth-child(5) {
+  margin-top: 17px;
+}
+.step ul li:nth-child(5) input {
+  width: 248px;
+  height: 40px;
+  border-radius: 3px;
+  border: 1px solid #999;
+  padding: 10px;
+}
+.step ul li:nth-child(6) select {
+  width: 118px;
+}
+.step ul li:nth-child(6) input {
+  width: 118px;
+  height: 40px;
+  border-radius: 3px;
+  border: 1px solid #999;
+  padding: 10px;
+  margin-right: 8px;
+}
+.step ul li:nth-child(7) input {
+  width: 248px;
+  height: 40px;
+  border-radius: 3px;
+  border: 1px solid #999;
+  padding: 10px;
+}
+.step2 {
+  width: 1100px;
+  height: 260px;
+  background-color: #fafafa;
+  border-radius: 10px;
+  padding: 55px 50px;
+}
+.step2 p {
+  font-size: 12px;
+}
+.step2 p span {
+  color: #ff0000;
+  padding-left: 15px;
+}
+.step2 h4 {
+  font-size: 18px;
+  margin-top: 50px;
+  margin-bottom: 35px;
+}
+.step2 li {
+  display: flex;
+}
+.step2 h5 {
+  font-size: 16px;
+  margin-right: 35px;
+  line-height: 40px;
+}
+.step2 input {
+  width: 248px;
+  height: 40px;
+  border-radius: 3px;
+  border: 1px solid #999;
+  background-color: white;
+  padding: 10px;
+  vertical-align: middle;
+}
+.step2 label {
+  width: 135px;
+  height: 40px;
+  color: white;
+  background-color: #3960c0;
+  border-radius: 3px;
+  text-align: center;
+  line-height: 40px;
+  margin-left: 15px;
+  font-size: 14px;
+  cursor: pointer;
+}
+.button {
+  margin: 100px 0;
+  position: relative;
+}
+.button a {
+  display: block;
+  width: 250px;
+  height: 80px;
+  border-radius: 10px;
+  background-color: #3960c0;
+  border: none;
+  color: white;
+  font-size: 18px;
+  cursor: pointer;
+  position: absolute;
+  text-align: center;
+  line-height: 80px;
+  left: 50%;
+  transform: translate(-50%, 0);
+}
+.various {
+  text-align: center;
+  margin-top: 500px;
+}
+.various h2 {
+  font-size: 32px;
+  margin-bottom: 35px;
+}
+.various p {
+  line-height: 30px;
+}
+.various>div {
+  display: flex;
+  width: 700px;
+  margin: 35px auto;
+  justify-content: space-between;
+}
+.various h6 {
+  font-size: 16px;
+  margin-top: 5px;
+}
+.various a {
+  display: block;
+}
+.various a p {
+  font-size: 14px;
+}
+
+/* footer */
+.footer_nav {
+  margin-top: 200px;
+  width: 100%;
+  height: 40px;
+  border-top: 1px solid #f6f6f6;
+  border-bottom: 1px solid #f6f6f6;
+  background-color: #fcfcfc;
+}
+.footer_nav nav {
+  width: 1100px;
+  margin: 0 auto;
+}
+.footer_nav nav ul {
+  display: flex;
+  width: 500px;
+  margin-left: 270px;
+  line-height: 40px;
+  justify-content: space-between;
+  font-size: 12px;
+  color: #333;
+}
+.footer_area_ex {
+  width: 100%;
+  height: 180px;
+  background-color: #fcfcfc;
+}
+.footer_area {
+  width: 1100px;
+  margin: 0 auto;
+  display: flex;
+}
+.footer_logo {
+  width: 270px;
+  position: relative;
+}
+.footer_logo img {
+  position: absolute;
+  top: 30px;
+  left: 60px;
+}
+.footer_txt {
+  padding-top: 30px;
+}
+.footer_txt p {
+  font-size: 12px;
+  line-height: 20px;
+}
+.footer_txt div {
+  margin-top: 10px;
+}
+.footer_txt div p {
+  color: #ccc;
+  font-size: 11px;
+}
+.footer_txt span {
+  font-family: 'Roboto', sans-serif;
+}

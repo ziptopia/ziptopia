@@ -65,7 +65,7 @@ body {
 }
 .lnb_ex {
   width: 1100px;
-  height: 65px;
+  height: 65px; 
   margin: 0 auto;
 }
 .lnb>ul {
@@ -161,7 +161,7 @@ body {
   right: 15px;
   top: 15px;
 }
-.dim {
+.dim, .dim02, .dim03 {
   display: none;
   position: fixed;
   left: 0;
@@ -187,9 +187,6 @@ body {
 .pop_login_form {
   display: none;
 }
-.pop_resetpw_form {
-  display: none;
-}
 .login_form {
   margin-top: 40px;
 }
@@ -199,11 +196,10 @@ body {
 .login_form li:last-child {
   margin-top: 20px;
 }
-.login_form li {
+.login_form li {  
   position: relative;
 }
 .login_form [type="text"],
-.login_form [type="email"],
 .login_form [type="password"] {
   border: none;
   border-bottom: 1px solid #aaa;
@@ -232,8 +228,7 @@ body {
   margin-top: 20px;
   margin-bottom: 45px;
 }
-.login_form [type="submit"],
-.login_form [type="button"] {
+.login_form [type="submit"] {
   width: 320px;
   height: 52px;
   border-radius: 5px;
@@ -243,7 +238,7 @@ body {
   color: white;
   margin-bottom: 15px;
 }
-.pop_login_form div:nth-child(3) a,
+.pop_login_form div:nth-child(3) a, 
 .pop_login_form span {
   font-size: 12px;
   color: #aaa;
@@ -267,7 +262,7 @@ body {
 .join_top label {
   display: block;
   text-align: left;
-}
+} 
 .join_top li {
   width: 320px;
   height: 80px;
@@ -339,148 +334,134 @@ label.error {
   font-size: 9px;
 }
 
-
-.resetpw_form {
-  margin-top: 40px;
+/* pop_chk */
+.pop_chk {
+  display: none;
+  position: fixed;
+  overflow-y: scroll;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: 420px;
+  height: 740px;
+  background-color: white;
+  border-radius: 5px;
+  box-shadow: 5px 5px 25px #ccc;
+  text-align: center;
+  z-index: 100;
+  padding: 50px 40px;
+  padding-bottom: 100px;
 }
-.resetpw_form li {
-  margin-top: 10px;
-}
-.resetpw_form li:last-child {
-  margin-top: 20px;
-}
-.resetpw_form li {
-  position: relative;
-}
-.resetpw_form [type="text"],
-.resetpw_form [type="email"],
-.resetpw_form [type="password"] {
-  border: none;
-  border-bottom: 1px solid #aaa;
-  outline: none;
-  width: 320px;
-  height: 40px;
-  font-size: 15px;
-  text-indent: 5px;
-}
-.resetpw_form label {
-  font-size: 15px;
-  color: #aaa;
-  position: absolute;
-  left: 5px;
-  top: 10px;
-}
-.resetpw_form input:focus,
-.resetpw_form input:valid {
-  border-bottom: 1px solid #418ade;
-}
-.resetpw_form input:focus + label,
-.resetpw_form input:valid + label{
+.pop_chk::-webkit-scrollbar {
   display: none;
 }
-.resetpw_form li:nth-child(2) {
-  margin-top: 20px;
-  margin-bottom: 45px;
+.pop_chk>h2 {
+  font-size: 28px;
+  font-weight: 900;
 }
-.resetpw_form [type="submit"],
-.resetpw_form [type="button"] {
-  width: 320px;
-  height: 52px;
-  border-radius: 5px;
-  background-color: #418ade;
-  border: none;
-  cursor: pointer;
+.pop_chk>p {
+  padding-top: 30px;
+  font-size: 12px;
+}
+.pop_chk>p span {
+  display: block;
+  font-size: 16px;
+  padding: 10px 0;
+}
+.pop_chk h3 {
+  width: 340px;
+  height: 50px;
+  background-color: #617287;
   color: white;
-  margin-bottom: 15px;
+  line-height: 50px;
+  font-size: 18px;
+  margin: 40px 0;
 }
-.pop_resetpw_form div:nth-child(3) a,
-.pop_resetpw_form span {
-  font-size: 12px;
-  color: #aaa;
+.pop_chk h4 {
+  font-size: 16px;
+  color: #333;
+  margin: 15px 0;
+  padding-left: 10px;
+  text-align: left;
+  border-left: 10px solid #333;
 }
-.pop_resetpw_form span {
-  padding: 0 15px;
+.pop_chk div div {
+  text-align: left;
+  font-size: 16px;
+  line-height: 30px;
+  border-top: 1px solid #ccc;
+  padding: 10px 0;
+  padding-left: 10px;
 }
-.pop_resetpw_form div:last-child {
-  margin-top: 40px;
+.pop_chk div div:last-child {
+  border-bottom: 1px solid #ccc;
 }
-.pop_resetpw_form div:last-child a {
-  color: #336fb4;
+.pop_chk div input {
+  cursor: pointer;
 }
-
-
-
-
-
-.pop_pwmodi_form div:nth-child(3) a,
-.pop_pwmodi_form span {
-  font-size: 12px;
-  color: #aaa;
+.pop_chk div label {
+  padding-left: 5px;
+  cursor: pointer;
 }
-.pop_pwmodi_form span {
-  padding: 0 15px;
+.pop_chk_close {
+  position: absolute;
+  right: 15px;
+  top: 15px;
 }
-.pop_pwmodi_form div:last-child {
-  margin-top: 40px;
+/* pop_insta */
+.pop_insta {
+  display: none;
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: 600px;
+  height: 700px;
+  background-color: white;
+  border-radius: 5px;
+  box-shadow: 5px 5px 25px #ccc;
+  z-index: 100;
+  padding: 30px;
+  color: #333;
 }
-.pop_pwmodi_form div:last-child a {
-  color: #336fb4;
-}
-.pwmodi_form {
-  margin-top: 40px;
-}
-.pwmodi_form li {
+.pop_insta h3 {
+  font-size: 18px;
+  line-height: 30px;
   margin-top: 10px;
 }
-.pwmodi_form li:last-child {
-  margin-top: 20px;
+.pop_insta>p {
+  font-size: 14px;
+  line-height: 30px;
 }
-.pwmodi_form li {
-  position: relative;
-}
-.pwmodi_form [type="text"],
-.pwmodi_form [type="email"],
-.pwmodi_form [type="password"] {
-  border: none;
-  border-bottom: 1px solid #aaa;
-  outline: none;
-  width: 320px;
-  height: 40px;
-  font-size: 15px;
-  text-indent: 5px;
-}
-.pwmodi_form label {
-  font-size: 15px;
-  color: #aaa;
-  position: absolute;
-  left: 5px;
-  top: 10px;
-}
-.pwmodi_form input:focus,
-.pwmodi_form input:valid {
-  border-bottom: 1px solid #418ade;
-}
-.pwmodi_form input:focus + label,
-.pwmodi_form input:valid + label{
-  display: none;
-}
-.pwmodi_form li:nth-child(2) {
-  margin-top: 20px;
-  margin-bottom: 45px;
-}
-.pwmodi_form [type="submit"],
-.pwmodi_form [type="button"] {
-  width: 320px;
-  height: 52px;
+.pop_insta>div>span {
+  display: inline-block;
+  width: 50px;
+  height: 20px;
+  background-color: #f5f5f5;
   border-radius: 5px;
-  background-color: #418ade;
-  border: none;
-  cursor: pointer;
-  color: white;
-  margin-bottom: 15px;
+  text-align: center;
+  line-height: 20px;
+  font-size: 12px;
 }
-
-
+.scrab {
+  position: absolute;
+  bottom: 80px;
+  right: 30px;
+}
+.scrab>a {
+  display: inline-block;
+  width: 70px;
+  height: 27px;
+  background-color: #e3eaff;
+  border-radius: 5px;
+  font-size: 12px;
+  padding: 5px;
+  text-align: center;
+}
+.scrab>a span {
+  color: #7393ff;
+  padding-left: 5px;
+}
 
 
 /* aside */
@@ -547,7 +528,6 @@ label.error {
   font-size: 18px;
   color: #7b7b7b;
 }
-
 /* main_banner */
 .slider01_ex {
   display: block;
@@ -569,7 +549,7 @@ label.error {
   position: relative;
   width: 100%;
   height: 500px;
-  background-color: #f3f2f7;
+  background-color: #f6f4f9;
   overflow: hidden;
 }
 .slider02 {

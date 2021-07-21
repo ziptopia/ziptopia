@@ -13,4 +13,9 @@ class GuaranteeController extends Controller
     public function guarantee () {
         return view('guarantee.guarantee');
     }
+
+    public function guarantee_company()
+    {
+        return view('guarantee.guarantee_company');
+    }
 }

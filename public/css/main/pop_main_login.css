@@ -1,0 +1,208 @@
+/* popup */
+.popup {
+  display: none;
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: 420px;
+  height: 460px;
+  background-color: white;
+  border-radius: 5px;
+  box-shadow: 5px 5px 25px #ccc;
+  text-align: center;
+  z-index: 100;
+  padding: 50px;
+}
+.popup_join {
+  display: none;
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: 420px;
+  height: 740px;
+  background-color: white;
+  border-radius: 5px;
+  box-shadow: 5px 5px 25px #ccc;
+  text-align: center;
+  z-index: 100;
+  padding: 50px;
+}
+.pop_close {
+  position: absolute;
+  right: 15px;
+  top: 15px;
+}
+.dim, .dim02, .dim03 {
+  display: none;
+  position: fixed;
+  left: 0;
+  top: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba( 255, 255, 255, 0.7);
+  z-index: 99;
+}
+.popup div>p:nth-child(2) {
+  margin-top: 15px;
+}
+.popup div>ul {
+  margin-top: 40px;
+}
+.popup div>ul li {
+  margin-top: 10px;
+}
+.popup div>ul li:last-child {
+  margin-top: 20px;
+}
+/* .pop_login_form */
+.pop_login_form {
+  display: none;
+}
+.login_form {
+  margin-top: 40px;
+}
+.login_form li {
+  margin-top: 10px;
+}
+.login_form li:last-child {
+  margin-top: 20px;
+}
+.login_form li {  
+  position: relative;
+}
+.login_form [type="text"],
+.login_form [type="password"] {
+  border: none;
+  border-bottom: 1px solid #aaa;
+  outline: none;
+  width: 320px;
+  height: 40px;
+  font-size: 15px;
+  text-indent: 5px;
+}
+.login_form label {
+  font-size: 15px;
+  color: #aaa;
+  position: absolute;
+  left: 5px;
+  top: 10px;
+}
+.login_form input:focus,
+.login_form input:valid {
+  border-bottom: 1px solid #418ade;
+}
+.login_form input:focus + label,
+.login_form input:valid + label{
+  display: none;
+}
+.login_form li:nth-child(2) {
+  margin-top: 20px;
+  margin-bottom: 45px;
+}
+.login_form [type="submit"] {
+  width: 320px;
+  height: 52px;
+  border-radius: 5px;
+  background-color: #418ade;
+  border: none;
+  cursor: pointer;
+  color: white;
+  margin-bottom: 15px;
+}
+.pop_login_form div:nth-child(3) a, 
+.pop_login_form span {
+  font-size: 12px;
+  color: #aaa;
+}
+.pop_login_form span {
+  padding: 0 15px;
+}
+.pop_login_form div:last-child {
+  margin-top: 40px;
+}
+.pop_login_form div:last-child a {
+  color: #336fb4;
+}
+/* .pop_join_form */
+.pop_join_form {
+  display: none;
+}
+.join_top {
+  margin-top: 40px;
+}
+.join_top label {
+  display: block;
+  text-align: left;
+} 
+.join_top li {
+  width: 320px;
+  height: 80px;
+  margin-top: 10px;
+}
+.join_top input {
+  width: 320px;
+  height: 40px;
+  border: none;
+  border-bottom: 1px solid #ccc;
+  text-indent: 10px;
+  font-size: 15px;
+  color: #ccc;
+  outline: none;
+}
+.join_top input:valid  {
+  color: black;
+}
+.join_bottom {
+  margin-top: 30px;
+}
+.join_bottom li {
+  position: relative;
+  width: 320px;
+  text-align: left;
+}
+.join_bottom li input {
+  display: inline-block;
+  width: 16px;
+  height: 16px;
+  margin-top: 3px;
+  margin-right: 5px;
+  cursor: pointer;
+}
+.join_bottom li label {
+  display: inline-block;
+  font-size: 12px;
+  cursor: pointer;
+}
+.join_bottom li label span {
+  color: #418ade;
+}
+.join_bottom>li:first-child label {
+  font-size: 15px;
+}
+.join_bottom li a {
+  position: absolute;
+  right: 10px;
+  font-size: 12px;
+}
+.join_bottom>div {
+  padding: 10px;
+}
+.pop_join_form button {
+  width: 320px;
+  height: 52px;
+  background-color: #418ade;
+  border: none;
+  color: white;
+  border-radius: 5px;
+  margin-top: 20px;
+  cursor: pointer;
+}
+input.error {
+  border-bottom: 1px solid #e76464;
+}
+label.error {
+  color: #e76464;
+  font-size: 9px;
+}

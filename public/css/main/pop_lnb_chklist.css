@@ -1,0 +1,75 @@
+
+/* pop_chk */
+.pop_chk {
+  display: none;
+  position: fixed;
+  overflow-y: scroll;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: 420px;
+  height: 740px;
+  background-color: white;
+  border-radius: 5px;
+  box-shadow: 5px 5px 25px #ccc;
+  text-align: center;
+  z-index: 100;
+  padding: 50px 40px;
+  padding-bottom: 100px;
+}
+.pop_chk::-webkit-scrollbar {
+  display: none;
+}
+.pop_chk>h2 {
+  font-size: 28px;
+  font-weight: 900;
+}
+.pop_chk>p {
+  padding-top: 30px;
+  font-size: 12px;
+}
+.pop_chk>p span {
+  display: block;
+  font-size: 16px;
+  padding: 10px 0;
+}
+.pop_chk h3 {
+  width: 340px;
+  height: 50px;
+  background-color: #617287;
+  color: white;
+  line-height: 50px;
+  font-size: 18px;
+  margin: 40px 0;
+}
+.pop_chk h4 {
+  font-size: 16px;
+  color: #333;
+  margin: 15px 0;
+  padding-left: 10px;
+  text-align: left;
+  border-left: 10px solid #333;
+}
+.pop_chk div div {
+  text-align: left;
+  font-size: 16px;
+  line-height: 30px;
+  border-top: 1px solid #ccc;
+  padding: 10px 0;
+  padding-left: 10px;
+}
+.pop_chk div div:last-child {
+  border-bottom: 1px solid #ccc;
+}
+.pop_chk div input {
+  cursor: pointer;
+}
+.pop_chk div label {
+  padding-left: 5px;
+  cursor: pointer;
+}
+.pop_chk_close {
+  position: absolute;
+  right: 15px;
+  top: 15px;
+}

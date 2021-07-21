@@ -12,8 +12,6 @@ use Illuminate\Support\Facades\Hash;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\View;
 use Illuminate\Support\Facades\DB;
-use App\Providers\RouteServiceProvider;
-use Symfony\Component\HttpFoundation\Response;
 use App\Models\Admin;
 
 class AdminMemberController extends Controller
@@ -26,13 +24,14 @@ class AdminMemberController extends Controller
         $this->middleware('guest:admin')->except('logout');
     }
 
-    public function index()
+    public function main()
     {
-        if (session()->get('adminuser')){
+        if (session() && session()->get('adminuser')){
             return view('admin.index');
         } else {
             return redirect('/admin/login');
         }
+        // return view('admin.index');
     }
 
     public function show_login_form()
@@ -47,6 +46,19 @@ class AdminMemberController extends Controller
             'password' => 'required|min:6'
         ]);
         
+        $credentials = $request->except(['_token']);
+
+        if ($this->guard('admin')->attempt($credentials)) {
+
+            $result = array(
+                'result' => 'error',
+                'message' => '유효하지 않은 데이터 입니다.',
+                'redirect' => '/'
+            );            
+        
+            return $result;
+        }
+
         // $adminuser = Admin::where('email',$request->email)->first();
         $adminuser = DB::table('adminmember')->where('email', $request->email)->first();
 
@@ -73,12 +85,6 @@ class AdminMemberController extends Controller
         }
 
         if (Hash::check($request->password, $adminuser->password)) {
-
-            $credentials = $request->except(['_token']);
-
-            // if (Auth::guard('admin')->attempt($credentials)) {
-            //     return redirect();
-            // }
 
             session([
                 'adminuser' => $request->email

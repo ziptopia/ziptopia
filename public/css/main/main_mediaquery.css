@@ -1,0 +1,242 @@
+/* mediaQuery */
+.mediaquary {
+  display: none;
+}
+.half_banner h5{
+  display: none;
+}
+
+@media all and (max-width:821px) {
+  .main_banner,
+  .bx-wrapper,
+  .content01,
+  .content02,
+  .content03,
+  .content04,
+  .quick{
+    display:none;
+  }
+  /* .lnb_ex {
+    position: absolute;
+    top: 60px;
+    right: 0;
+    width: 60%;
+    height: auto;
+    background-color: #ccc;
+    z-index: 9;
+  }
+  .lnb>ul {
+    display: block;
+  }
+  .lnb>ul>li {
+    width: 100%;
+    height: 50px;
+    text-align: center;
+    font-size: 14px;
+  } */
+  .gnb {display: none;}
+  .lnb_ex {
+    display: none;
+  }
+
+
+
+
+  .gnb_ex {
+    position: fixed;
+    z-index: 999;
+    width: 100%;
+    height: 60px;
+    padding: 10px 30px;
+    border-bottom: 1px solid #eee;
+    background-color: white;
+  }
+  
+  .hamburger {
+    content: "";
+    position: absolute;
+    right: 30px;
+    top: 20px;
+    width: 22px;
+    height: 18px;
+    background: url(../../images/main/mediaquery/hamburger.png);
+  }
+  .half_banner {
+    position: fixed;
+    bottom: 0;
+    width: 100%;
+    margin: 0;
+    justify-content: center;
+    background-color: white;
+    box-shadow: 0 -2px 10px rgba(78, 78, 78, 0.1);
+  }
+  .half_banner>a {
+    width: 40%;
+    height: 50px;
+    margin: 13px 0;
+  }
+  .half_banner>a:first-child {
+    margin-right: 3%;
+  }
+  .left_banner div,
+  .right_banner div{
+    display: none;
+  }
+  .half_banner h5{
+    display: block;
+    text-align: center;
+    line-height: 20px;
+    font-size: 15px;
+    color: white;
+  }
+  .half_banner h5 span {
+    font-size: 10px;
+    font-weight: 500;
+    color: #bfd8ff;
+  }
+  
+  .mediaquary {
+    display: block;
+    width: 100%;
+  }
+  .quary01 {
+    position: relative;
+    height: 100vh;
+    padding-top: 60px;
+  }
+  .quary01 img{
+    position: absolute;
+    left: 50%;
+    bottom: 78px;
+    transform: translateX(-50%);
+  }
+  .quary02 {
+    position: relative;
+    height: 100vh;
+    background-color: #fff7f5;
+    background-size: 100% 100%;
+    padding-top: 60px;
+  }
+  .quary02 img{
+    position: absolute;
+    left: 50%;
+    bottom: 78px;
+    transform: translateX(-50%);
+  }
+  .quary03 {
+    position: relative;
+    height: 100vh;
+    background-image: url(../../images/main/mediaquery/mediaquery03_bg.png);
+    background-size: 100% 100%;
+    padding-top: 60px;
+  }
+  .quary03 img{
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    transform: translate(-50%, -50%);
+  }
+  
+  .quary04 {
+    position: relative;
+    height: 100vh;
+    background-image: url(../../images/main/mediaquery/mediaquery04_bg.png);
+    background-size: 100% 100%;
+    padding-top: 60px;
+  }
+  .quary04 img{
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    transform: translate(-50%, -50%);
+  }
+  #container {
+    width: 100%;
+    margin: 0;
+  }
+  .content05 {
+    /* display: none; */
+    width: 100%;
+    overflow: hidden;
+  }
+  .content06 {
+    /* display: none; */
+    width: 100%;
+    overflow: hidden;
+  }
+  .bottom_banner {
+    justify-content: center;
+    flex-wrap: wrap;
+  }
+  .bottom_banner>div:first-child {
+    width: 90%;
+    margin: 0 auto;
+  }
+  .bottom_banner>div:first-child img {
+    width: 100%;
+  }
+  .sns {
+    width: 90%;
+    height: 80px;
+    margin: 10px auto;
+  }
+  .sns h3{
+    font-size: 20px;
+    color: #186cf4;
+    line-height: 80px;
+    margin-left: 50px;
+    margin-right: 30px;
+  }
+  .sns a {
+    display: block;
+    margin-top: 20px;
+    margin-right: 15px;
+  }
+  .sns span {
+    font-family: 'Roboto', sans-serif;
+    font-weight: 900;
+  }
+
+  .footer_nav {
+    background-color: #fcfcfc;
+    margin-top: 70px;
+  }
+  .footer_nav nav {
+    width: 100%;
+    margin: 0;
+  }
+  .footer_nav nav ul {
+    width: 100%;
+    margin: 0;
+    justify-content: space-around;
+  }
+  .footer_area_ex {
+    height: 340px;
+  }
+  .footer_area {
+    width: 80%;
+    margin: 0 auto;
+    background-color: #fcfcfc;
+  }
+  .footer_logo {
+    display: none;
+  }
+  .footer_txt {
+    padding: none;
+  }
+  .footer_txt div {
+    margin: 0;
+  }
+  .footer_txt p {
+    font-size: 11px;
+  }
+  .footer_txt div p {
+    color: #ccc;
+    font-size: 9px;
+  }
+
+
+
+
+
+}

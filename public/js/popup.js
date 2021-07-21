@@ -23,6 +23,7 @@ $(function () {
     });
   });
 
+
   $(function () {
     var log = $(".login_email");
     var base = $(".pop_base");
@@ -38,33 +39,57 @@ $(function () {
     var email = $(".join_email");
     var login = $(".pop_login_form");
     var join = $(".pop_join_form");
-    var pw = $(".reset_pw");
-    var resetpw = $(".pop_resetpw_form");
 
     email.click(function () {
       login.hide();
-      resetpw.hide();
       join.show();
       $(".popup").addClass("popup_join");
-    });
-
-    pw.click(function () {
-      login.hide();
-      join.hide();
-      resetpw.show();
-      $(".popup").addClass("popup_resetpw");
     });
   });
 
   $(function () {
-    var chk = $("#chk_all");
-    var chklist = $(".join_bottom>div input");
+    var chklist = $(".chklist")
+    var pop = $(".pop_chk");
+    var dim = $(".dim02");
 
-    chk.click(function () {
-      chklist.click();
+    chklist.on("click", function () {
+      pop.show();
+      dim.show();
+    });
+
+    $(".pop_chk_close").on("click", function () {
+      pop.hide();
+      dim.hide();
+    });
+
+    dim.on("click", function () {
+      pop.hide();
+      dim.hide();
     });
   });
 
+  $(function () {
+    var pop_insta = $(".pop_insta01")
+    var pop = $(".pop_insta");
+    var dim = $(".dim03");
+
+    pop_insta.on("click", function () {
+      pop.show();
+      dim.show();
+    });
+
+    $(".pop_chk_close").on("click", function () {
+      pop.hide();
+      dim.hide();
+    });
+
+    dim.on("click", function () {
+      pop.hide();
+      dim.hide();
+    });
+  });
+
+  
   $(function(){
     // validate signup form on keyup and submit
     $(".join_form").validate({

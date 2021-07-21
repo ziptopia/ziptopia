@@ -31,17 +31,17 @@
             </div>
             <nav class="gnb">
               <ul>
-                    @if( Auth::check() )
+                    @if( session()->get('adminuser') )
                     <li>
                       <form id="LogoutForm">
                         @csrf
                       </form>
-                      <p><a href="#" id="LogoutAct">로그아웃</a></p>
+                      <p><a href="#" id="LogoutAct">{{ session()->get('adminuser') }} 로그아웃</a></p>
                     </li>
                     @else
                     <li>
                     <a href="/admin/login" class="login">
-                        <p>로그인 {{ session()->get('adminuser') }}</p>
+                        <p>로그인</p>
                     </a>
                     </li>
                     @endif

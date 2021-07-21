@@ -8,7 +8,65 @@
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 @endsection
 
+@section('side_bar')
+
+  <aside class="quick">
+    <p><span>QUICK LINK</span></p>
+    <div>
+      <a href="#">
+        <img src="/images/aside_why.png" alt="물음표이미지">
+        <p>왜 집토피아 인가요?</p>
+      </a>
+    </div>
+    <div>
+      <a href="{{ url('/counsel/counsel') }}">
+        <strong><span>3%</span> 할인</strong>
+        <p>견적알아보기</p>
+      </a>
+    </div>
+    <div>
+      <a href="{{ url('/counsel/counsel_free') }}">
+        <img src="/images/aside_calculator.png" alt="계산기이미지">
+        <p>착한견적</p>
+      </a>
+    </div>
+    <div>
+      <a href="tel:070-8098-9111">
+        <p>전화상담</p>
+        <strong>
+          <span>
+            070<br>
+            8098<br>
+            9111
+          </span>
+        </strong>
+      </a>
+    </div>
+  </aside><!-- aside -->
+    
+@endsection
+
 @section('content')
+  
+    <div class="dim03">
+    </div><!-- pop_insta -->
+    <div class="main_banner slider">
+      <div>
+        <a href="sub/ssago.html" class="slider01_ex">
+          <img src="/images/mainbanner/slide01.png" alt="" class="slider01">
+        </a>
+      </div>
+      <div>
+        <a href="counsel/service.html" class="slider02_ex">
+          <img src="/images/mainbanner/slide02.png" alt="" class="slider02">
+        </a>
+      </div>
+      <div>
+        <a href="guarantee/guarantee.html" class="slider03_ex">
+          <img src="/images/mainbanner/slide03.png" alt="" class="slider03">
+        </a>
+      </div>
+    </div><!-- main_banner -->
 
       <section class="half_banner">
         <a href="#" rel="3%할인상담이동">
